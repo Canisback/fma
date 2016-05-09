@@ -1,0 +1,992 @@
+{
+  "266": {
+	 "position": [
+		"Top",
+		"Jungle"
+	 ],
+	 "name": "Aatrox",
+	 "key": "Aatrox"
+  },
+  "412": {
+	 "position": [
+		"Support"
+	 ],
+	 "name": "Thresh",
+	 "key": "Thresh"
+  },
+  "23": {
+	 "position": [
+		"Top",
+		"Jungle"
+	 ],
+	 "name": "Tryndamere",
+	 "key": "Tryndamere"
+  },
+  "79": {
+	 "position": [
+		"Jungle",
+		"Top",
+		"Mid"
+	 ],
+	 "name": "Gragas",
+	 "key": "Gragas"
+  },
+  "136": {
+	 "position": [
+		"Mid"
+	 ],
+	 "name": "Aurelion Sol",
+	 "key": "AurelionSol"
+  },
+  "69": {
+	 "position": ["Mid"],
+	 "name": "Cassiopeia",
+	 "key": "Cassiopeia"
+  },
+  "78": {
+	 "position": [
+		"Support",
+		"Top"
+	 ],
+	 "name": "Poppy",
+	 "key": "Poppy"
+  },
+  "13": {
+	 "position": [
+		"Mid",
+		"Top"
+	 ],
+	 "name": "Ryze",
+	 "key": "Ryze"
+  },
+  "14": {
+	 "position": [
+		"Top",
+		"Jungle"
+	 ],
+	 "name": "Sion",
+	 "key": "Sion"
+  },
+  "1": {
+	 "position": [
+		"Mid",
+		"Support"
+	 ],
+	 "name": "Annie",
+	 "key": "Annie"
+  },
+  "202": {
+	 "position": [
+		"Bot"
+	 ],
+	 "name": "Jhin",
+	 "key": "Jhin"
+  },
+  "111": {
+	 "position": [
+		"Jungle",
+		"Support",
+		"Top"
+	 ],
+	 "name": "Nautilus",
+	 "key": "Nautilus"
+  },
+  "43": {
+	 "position": [
+		"Mid",
+		"Support"
+	 ],
+	 "name": "Karma",
+	 "key": "Karma"
+  },
+  "99": {
+	 "position": [
+		"Mid",
+		"Support"
+	 ],
+	 "name": "Lux",
+	 "key": "Lux"
+  },
+  "103": {
+	 "position": [
+		"Mid"
+	 ],
+	 "name": "Ahri",
+	 "key": "Ahri"
+  },
+  "2": {
+	 "position": [
+		"Top",
+		"Jungle"
+	 ],
+	 "name": "Olaf",
+	 "key": "Olaf"
+  },
+  "112": {
+	 "position": ["Mid"],
+	 "name": "Viktor",
+	 "key": "Viktor"
+  },
+  "27": {
+	 "position": [
+		"Top"
+	 ],
+	 "name": "Singed",
+	 "key": "Singed"
+  },
+  "86": {
+	 "position": [
+		"Top",
+		"Jungle"
+	 ],
+	 "name": "Garen",
+	 "key": "Garen"
+  },
+  "34": {
+	 "position": [
+		"Mage"
+	 ],
+	 "name": "Anivia",
+	 "key": "Anivia"
+  },
+  "57": {
+	 "position": [
+		"Top",
+		"Jungle"
+	 ],
+	 "name": "Maokai",
+	 "key": "Maokai"
+  },
+  "127": {
+	 "position": [
+		"Mid",
+		"Top"
+	 ],
+	 "name": "Lissandra",
+	 "key": "Lissandra"
+  },
+  "25": {
+	 "position": [
+		"Support",
+		"Mid"
+	 ],
+	 "name": "Morgana",
+	 "key": "Morgana"
+  },
+  "28": {
+	 "position": [
+		"Jungle"
+	 ],
+	 "name": "Evelynn",
+	 "key": "Evelynn"
+  },
+  "105": {
+	 "position": [
+		"Mid",
+		"Top"
+	 ],
+	 "name": "Fizz",
+	 "key": "Fizz"
+  },
+  "74": {
+	 "position": [
+		"Mid",
+		"Support"
+	 ],
+	 "name": "Heimerdinger",
+	 "key": "Heimerdinger"
+  },
+  "238": {
+	 "position": [
+		"Mid"
+	 ],
+	 "name": "Zed",
+	 "key": "Zed"
+  },
+  "68": {
+	 "position": [
+		"Top",
+		"Jungle"
+	 ],
+	 "name": "Rumble",
+	 "key": "Rumble"
+  },
+  "82": {
+	 "position": [
+		"Bot",
+		"Mid"
+	 ],
+	 "name": "Mordekaiser",
+	 "key": "Mordekaiser"
+  },
+  "37": {
+	 "position": [
+		"Support",
+		"Mid"
+	 ],
+	 "name": "Sona",
+	 "key": "Sona"
+  },
+  "55": {
+	 "position": [
+		"Mid"
+	 ],
+	 "name": "Katarina",
+	 "key": "Katarina"
+  },
+  "96": {
+	 "position": [
+		"Bot",
+		"Mid"
+	 ],
+	 "name": "Kog'Maw",
+	 "key": "KogMaw"
+  },
+  "22": {
+	 "position": [
+		"Bot",
+		"Support"
+	 ],
+	 "name": "Ashe",
+	 "key": "Ashe"
+  },
+  "117": {
+	 "position": [
+		"Support",
+		"Mid"
+	 ],
+	 "name": "Lulu",
+	 "key": "Lulu"
+  },
+  "30": {
+	 "position": ["Mid"],
+	 "name": "Karthus",
+	 "key": "Karthus"
+  },
+  "12": {
+	 "position": [
+		"Support",
+		"Jungle"
+	 ],
+	 "name": "Alistar",
+	 "key": "Alistar"
+  },
+  "122": {
+	 "position": [
+		"Top"
+	 ],
+	 "name": "Darius",
+	 "key": "Darius"
+  },
+  "67": {
+	 "position": [
+		"Bot",
+		"Top"
+	 ],
+	 "name": "Vayne",
+	 "key": "Vayne"
+  },
+  "77": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Udyr",
+	 "key": "Udyr"
+  },
+  "110": {
+	 "position": [
+		"Bot",
+		"Mid"
+	 ],
+	 "id": 110,
+	 "title": "the Arrow of Retribution",
+	 "name": "Varus",
+	 "key": "Varus"
+  },
+  "126": {
+	 "position": [
+		"Mid",
+		"Top",
+		"Bot"
+	 ],
+	 "name": "Jayce",
+	 "key": "Jayce"
+  },
+  "89": {
+	 "position": [
+		"Support",
+		"Top"
+	 ],
+	 "name": "Leona",
+	 "key": "Leona"
+  },
+  "134": {
+	 "position": [
+		"Mid"
+	 ],
+	 "name": "Syndra",
+	 "key": "Syndra"
+  },
+  "80": {
+	 "position": [
+		"Jungle",
+		"Top",
+		"Mid"
+	 ],
+	 "name": "Pantheon",
+	 "key": "Pantheon"
+  },
+  "121": {
+	 "position": [
+		"Jungle",
+		"Mid",
+		"Top"
+	 ],
+	 "id": 121,
+	 "name": "Kha'Zix",
+	 "key": "Khazix"
+  },
+  "92": {
+	 "position": [
+		"Top",
+		"Mid"
+	 ],
+	 "name": "Riven",
+	 "key": "Riven"
+  },
+  "42": {
+	 "position": [
+		"Mid",
+		"Bot"
+	 ],
+	 "name": "Corki",
+	 "key": "Corki"
+  },
+  "51": {
+	 "position": ["Bot"],
+	 "name": "Caitlyn",
+	 "key": "Caitlyn"
+  },
+  "268": {
+	 "position": [
+		"Mid"
+	 ],
+	 "name": "Azir",
+	 "key": "Azir"
+  },
+  "76": {
+	 "position": [
+		"Jungle",
+		"Mid",
+		"Top"
+	 ],
+	 "name": "Nidalee",
+	 "key": "Nidalee"
+  },
+  "85": {
+	 "position": [
+		"Mid",
+		"Top",
+		"Bot",
+		"Support"
+	 ],
+	 "name": "Kennen",
+	 "key": "Kennen"
+  },
+  "3": {
+	 "position": [
+		"Mid",
+		"Support",
+		"Top"
+	 ],
+	 "name": "Galio",
+	 "key": "Galio"
+  },
+  "45": {
+	 "position": [
+		"Mid",
+		"Support"
+	 ],
+	 "name": "Veigar",
+	 "key": "Veigar"
+  },
+  "432": {
+	 "position": [
+		"Support"
+	 ],
+	 "name": "Bard",
+	 "key": "Bard"
+  },
+  "150": {
+	 "position": [
+		"Top"
+	 ],
+	 "name": "Gnar",
+	 "key": "Gnar"
+  },
+  "90": {
+	 "position": [
+		"Mid",
+		"Bot"
+	 ],
+	 "name": "Malzahar",
+	 "key": "Malzahar"
+  },
+  "104": {
+	 "position": [
+		"Jungle",
+		"Top",
+		"Bot"
+	 ],
+	 "name": "Graves",
+	 "key": "Graves"
+  },
+  "254": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Vi",
+	 "key": "Vi"
+  },
+  "10": {
+	 "position": [
+		"Mid",
+		"Top",
+		"Bot",
+		"Support"
+	 ],
+	 "name": "Kayle",
+	 "key": "Kayle"
+  },
+  "39": {
+	 "position": [
+		"Top"
+	 ],
+	 "name": "Irelia",
+	 "key": "Irelia"
+  },
+  "64": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Lee Sin",
+	 "key": "LeeSin"
+  },
+  "420": {
+	 "position": [
+		"Top",
+		"Support"
+	 ],
+	 "name": "Illaoi",
+	 "key": "Illaoi"
+  },
+  "60": {
+	 "position": [
+		"Jungle",
+		"Mid"
+	 ],
+	 "name": "Elise",
+	 "key": "Elise"
+  },
+  "106": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Volibear",
+	 "key": "Volibear"
+  },
+  "20": {
+	 "position": [
+		"Jungle",
+		"Support"
+	 ],
+	 "name": "Nunu",
+	 "key": "Nunu"
+  },
+  "4": {
+	 "position": ["Mid"],
+	 "name": "Twisted Fate",
+	 "key": "TwistedFate"
+  },
+  "24": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Jax",
+	 "key": "Jax"
+  },
+  "102": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Shyvana",
+	 "key": "Shyvana"
+  },
+  "429": {
+	 "position": ["Bot"],
+	 "name": "Kalista",
+	 "key": "Kalista"
+  },
+  "36": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Dr. Mundo",
+	 "key": "DrMundo"
+  },
+  "223": {
+	 "position": [
+		"Support",
+		"Top"
+	 ],
+	 "name": "Tahm Kench",
+	 "key": "TahmKench"
+  },
+  "131": {
+	 "position": [
+		"Mid",
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Diana",
+	 "key": "Diana"
+  },
+  "63": {
+	 "position": [
+		"Mid",
+		"Support"
+		],
+	 "name": "Brand",
+	 "key": "Brand"
+  },
+  "113": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Sejuani",
+	 "key": "Sejuani"
+  },
+  "8": {
+	 "position": [
+		"Top",
+		"Mid"
+	 ],
+	 "name": "Vladimir",
+	 "key": "Vladimir"
+  },
+  "154": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Zac",
+	 "key": "Zac"
+  },
+  "421": {
+	 "position": ["Jungle"],
+	 "name": "Rek'Sai",
+	 "key": "RekSai"
+  },
+  "133": {
+	 "position": [
+		"Top",
+		"Bot"
+	 ],
+	 "name": "Quinn",
+	 "key": "Quinn"
+  },
+  "84": {
+	 "position": [
+		"Mid",
+		"Top"
+		],
+	 "name": "Akali",
+	 "key": "Akali"
+  },
+  "18": {
+	 "position": [
+		"Bot",
+		"Mid"
+	 ],
+	 "name": "Tristana",
+	 "key": "Tristana"
+  },
+  "120": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Hecarim",
+	 "key": "Hecarim"
+  },
+  "15": {
+	 "position": ["Bot"],
+	 "name": "Sivir",
+	 "key": "Sivir"
+  },
+  "236": {
+	 "position": ["Bot"],
+	 "name": "Lucian",
+	 "key": "Lucian"
+  },
+  "107": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Rengar",
+	 "key": "Rengar"
+  },
+  "19": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Warwick",
+	 "key": "Warwick"
+  },
+  "72": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Skarner",
+	 "key": "Skarner"
+  },
+  "54": {
+	 "position": [
+		"Top",
+		"Jungle",
+		"Mid"
+	 ],
+	 "name": "Malphite",
+	 "key": "Malphite"
+  },
+  "157": {
+	 "position": [
+		"Mid",
+		"Top"
+	 ],
+	 "name": "Yasuo",
+	 "key": "Yasuo"
+  },
+  "101": {
+	 "position": [
+		"Mid"
+	 ],
+	 "name": "Xerath",
+	 "key": "Xerath"
+  },
+  "17": {
+	 "position": [
+		"Mid",
+		"Top",
+		"Support",
+		"Bot"
+	 ],
+	 "name": "Teemo",
+	 "key": "Teemo"
+  },
+  "58": {
+	 "position": [
+		"Top"
+	 ],
+	 "name": "Renekton",
+	 "key": "Renekton"
+  },
+  "75": {
+	 "position": [
+		"Top"
+	 ],
+	 "name": "Nasus",
+	 "key": "Nasus"
+  },
+  "119": {
+	 "position": ["Bot"],
+	 "name": "Draven",
+	 "key": "Draven"
+  },
+  "35": {
+	 "position": ["Jungle"],
+	 "name": "Shaco",
+	 "key": "Shaco"
+  },
+  "50": {
+	 "position": [
+		"Mid",
+		"Top"
+	 ],
+	 "name": "Swain",
+	 "key": "Swain"
+  },
+  "40": {
+	 "position": [
+		"Support",
+		"Mid"
+	 ],
+	 "name": "Janna",
+	 "key": "Janna"
+  },
+  "91": {
+	 "position": [
+		"Mid",
+		"Top"
+	 ],
+	 "name": "Talon",
+	 "key": "Talon"
+  },
+  "115": {
+	 "position": ["Mid"],
+	 "name": "Ziggs",
+	 "key": "Ziggs"
+  },
+  "245": {
+	 "position": [
+		"Top",
+		"Mid",
+		"Jungle"
+	 ],
+	 "name": "Ekko",
+	 "key": "Ekko"
+  },
+  "61": {
+	 "position": [
+		"Mid",
+		"Support"
+	 ],
+	 "name": "Orianna",
+	 "key": "Orianna"
+  },
+  "9": {
+	 "position": [
+		"Jungle",
+		"Mid",
+		"Support"
+	 ],
+	 "name": "Fiddlesticks",
+	 "key": "FiddleSticks"
+  },
+  "114": {
+	 "position": [
+		"Top"
+	 ],
+	 "name": "Fiora",
+	 "key": "Fiora"
+  },
+  "31": {
+	 "position": [
+		"Mid",
+		"Top"
+	 ],
+	 "name": "Cho'Gath",
+	 "key": "Chogath"
+  },
+  "33": {
+	 "position": [
+		"Top",
+		"Jungle"
+	 ],
+	 "name": "Rammus",
+	 "key": "Rammus"
+  },
+  "7": {
+	 "position": [
+		"Mid"
+	 ],
+	 "name": "LeBlanc",
+	 "key": "Leblanc"
+  },
+  "16": {
+	 "position": [
+		"Support",
+		"Mid"
+	 ],
+	 "name": "Soraka",
+	 "key": "Soraka"
+  },
+  "26": {
+	 "position": [
+		"Mid",
+		"Support"
+	 ],
+	 "name": "Zilean",
+	 "key": "Zilean"
+  },
+  "56": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Nocturne",
+	 "key": "Nocturne"
+  },
+  "222": {
+	 "position": ["Bot"],
+	 "name": "Jinx",
+	 "key": "Jinx"
+  },
+  "83": {
+	 "position": [
+		"Top"
+	 ],
+	 "name": "Yorick",
+	 "key": "Yorick"
+  },
+  "6": {
+	 "position": [
+		"Bot",
+		"Top"
+	 ],
+	 "name": "Urgot",
+	 "key": "Urgot"
+  },
+  "203": {
+	 "position": [
+		"Jungle",
+		"Bot"
+		],
+	 "name": "Kindred",
+	 "key": "Kindred"
+  },
+  "21": {
+	 "position": ["Bot"],
+	 "name": "Miss Fortune",
+	 "key": "MissFortune"
+  },
+  "62": {
+	 "position": [
+		"Top",
+		"Jungle"
+	 ],
+	 "name": "Wukong",
+	 "key": "MonkeyKing"
+  },
+  "53": {
+	 "position": [
+		"Support"
+	 ],
+	 "name": "Blitzcrank",
+	 "key": "Blitzcrank"
+  },
+  "98": {
+	 "position": [
+		"Top",
+		"Support"
+	 ],
+	 "name": "Shen",
+	 "key": "Shen"
+  },
+  "201": {
+	 "position": [
+		"Support"
+	 ],
+	 "name": "Braum",
+	 "key": "Braum"
+  },
+  "5": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Xin Zhao",
+	 "key": "XinZhao"
+  },
+  "29": {
+	 "position": [
+		"Bot"
+	 ],
+	 "name": "Twitch",
+	 "key": "Twitch"
+  },
+  "11": {
+	 "position": [
+		"Jungle"
+	 ],
+	 "name": "Master Yi",
+	 "key": "MasterYi"
+  },
+  "44": {
+	 "position": [
+		"Support"
+	 ],
+	 "name": "Taric",
+	 "key": "Taric"
+  },
+  "32": {
+	 "position": [
+		"Jungle"
+	 ],
+	 "name": "Amumu",
+	 "key": "Amumu"
+  },
+  "41": {
+	 "position": [
+		"Top",
+		"Mid"
+	 ],
+	 "name": "Gangplank",
+	 "key": "Gangplank"
+  },
+  "48": {
+	 "position": [
+		"Top",
+		"Support"
+	 ],
+	 "name": "Trundle",
+	 "key": "Trundle"
+  },
+  "38": {
+	 "position": [
+		"Mid"
+	 ],
+	 "name": "Kassadin",
+	 "key": "Kassadin"
+  },
+  "161": {
+	 "position": [
+		"Mid",
+		"Support"
+	 ],
+	 "name": "Vel'Koz",
+	 "key": "Velkoz"
+  },
+  "143": {
+	 "position": [
+		"Support",
+		"Mid"
+	 ],
+	 "name": "Zyra",
+	 "key": "Zyra"
+  },
+  "267": {
+	 "position": [
+		"Support"
+	 ],
+	 "name": "Nami",
+	 "key": "Nami"
+  },
+  "59": {
+	 "position": [
+		"Jungle",
+		"Top"
+	 ],
+	 "name": "Jarvan IV",
+	 "key": "JarvanIV"
+  },
+  "81": {
+	 "position": [
+		"Bot",
+		"Mid"
+	 ],
+	 "name": "Ezreal",
+	 "key": "Ezreal"
+  }
+}

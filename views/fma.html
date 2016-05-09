@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="utf-8" />
+
+        <title>FullMastery Alchemist</title>
+		
+		<!-- Bootstrap Framework -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		
+		<!-- Google Icons -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		
+		<!-- My CSS -->
+		<link rel="stylesheet" href="http://canisback.com/fma/views/css/mycss.css">
+
+    </head>
+
+ 
+
+    <body ng-app="fma">
+	
+		<div  ng-controller="FMAController" class="container-fluid">
+		
+			<div ng-show="modal.open" class="panel-modal-screen" ng-click="modal.open=false"></div>
+			
+			<div ng-show="modal.open && modal.type == 'position'" class="panel panel-modal" style="left:{{modal.left}}px;top:{{modal.top}}px">
+				<div class="row">
+					<div class="col-md-12">
+						<h4>{{modal.title}}</h4>
+						<br >
+						<div class="row">
+							<div class="col-md-offset-1 col-md-2">
+								<div class="icon_top click" ng-click="lockPosition(modal.summoner,'top')"></div>
+							</div>
+							<div class="col-md-2">
+								<div class="icon_jungle click" ng-click="lockPosition(modal.summoner,'jungle')"></div>
+							</div>
+							<div class="col-md-2">
+								<div class="icon_mid click" ng-click="lockPosition(modal.summoner,'mid')"></div>
+							</div>
+							<div class="col-md-2">
+								<div class="icon_support click" ng-click="lockPosition(modal.summoner,'support')"></div>
+							</div>
+							<div class="col-md-2">
+								<div class="icon_bot click" ng-click="lockPosition(modal.summoner,'bot')"></div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div ng-show="modal.open && modal.type == 'champions'" class="panel panel-modal" style="left:{{modal.left}}px;top:{{modal.top}}px;min-width:60%">
+				<div class="row">
+					<div class="col-md-12">
+						<h4>{{modal.title}}</h4>
+						<br >
+						<div class="row" style="margin-left:15px;">
+							<div ng-repeat="c in championImageData.data | sortChampions" class="col-md-1 click" ng-click="lockChampion(modal.summoner,c.id)" title="{{championImageData.data[c.id].name}}" style="padding:5px;">
+								<div style="background: transparent url('http://ddragon.leagueoflegends.com/cdn/{{ championImageData.version }}/img/sprite/{{ championImageData.data[c.id].image.sprite }}') no-repeat scroll -{{ championImageData.data[c.id].image.x }}px -{{ championImageData.data[c.id].image.y }}px;width: 48px;height: 48px;display: inline-block;">
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div ng-show="modal.open && modal.type == 'ban'" class="panel panel-modal" style="left:{{modal.left}}px;top:{{modal.top}}px;min-width:60%">
+				<div class="row">
+					<div class="col-md-12">
+						<h4>{{modal.title}}</h4>
+						<br >
+						<div class="row" style="margin-left:15px;">
+							<div ng-repeat="c in championImageData.data | sortChampions" class="col-md-1 click" ng-click="toggleChampion('global',c.id)" title="{{championImageData.data[c.id].name}}" style="padding:5px;">
+								<div style="background: transparent url('http://ddragon.leagueoflegends.com/cdn/{{ championImageData.version }}/img/sprite/{{ championImageData.data[c.id].image.sprite }}') no-repeat scroll -{{ championImageData.data[c.id].image.x }}px -{{ championImageData.data[c.id].image.y }}px;width: 48px;height: 48px;display: inline-block;">
+									<div class="no-chest-border"><div ng-class="{'block':isBannedChampion('global',c.id)}"></div></div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container-fluid">
+					<h2 class="text-center">FullMastery Alchemist</h2>
+				</div>
+			</nav>
+			
+			<div class="row">
+			
+				<div class="col-md-2 col-sm-3 sidebar">
+
+					<div>
+						Connected as : <span ng-click="editName = true" ng-show="!editName" class="click">{{ userName }} <i class='material-icons shrunk-material-icons'>create</i></span><input id="inputUsername" type="text" ng-model="userName" ng-show="editName" ng-keyup="sendEditName($event)" class="form-control inline-input" onFocus="$('#inputUsername').select()" maxlength="30">
+					</div><br />
+					
+					<h4>Users connected : </h4>
+					<div id="usersList" class="usersList">
+						<p ng-repeat="user in usersList">{{user}}</p>
+					</div>
+					
+					<h4>Chat : </h4>
+					<div id="chatRoom" class="chatRoom">
+					</div>
+					<input class="form-control" ng-model="message" ng-keyup="sendMessage($event)" placeholder="Message..." style="margin-top:2px;" maxlength="140">
+					
+				</div>
+				
+				<div class="col-md-offset-2 col-sm-offset-3 col-md-10 col-sm-9  main">
+					
+					<div class="row" style="padding:15px;height:55px;">
+					
+						<div class="limited-input input-group pull-left col-md-10 col-sm-9">
+							<span class="input-group-addon click" id="basic-addon1" ng-click="addSummoner()"><i class='material-icons'>add_circle</i></span>
+							<input type="text" ng-model="addSummonerName" ng-keyup="addSummoner($event)" class="form-control high-input" placeholder="Add Summoner" maxlength="30">
+						</div>
+						<span ng-show="showAddError" class="error">{{messageAddError}}</span>
+						
+						
+						
+						<div class="pull-right col-md-2 col-sm-3" ng-class="{'icon_chest_gold':chestOptimized,'icon_chest_gray':!chestOptimized}" ng-title="{'Optimized for chest looting':chestOptimized,'Not optimized for chest looting':!chestOptimized}" ng-click="toggleChestOptimization()"></div>
+						
+						<div class="pull-right" style="margin-right:20px;">
+							<div ng-repeat="(key,value) in bannedChampions.global" style="background: transparent url('http://ddragon.leagueoflegends.com/cdn/{{ championImageData.version }}/img/sprite/{{ championImageData.data[key].image.sprite }}') no-repeat scroll -{{ championImageData.data[key].image.x }}px -{{ championImageData.data[key].image.y }}px;width: 48px;height: 48px;display: inline-block;margin-right:2px;">
+							</div>
+							<button class="btn btn-danger" ng-click="openModalBan($event)" style="vertical-align:top">Ban</button>
+						</div>
+						
+					</div>
+					
+					
+					<div class="summonerPanel" ng-show="showPanel">
+					
+						<div class="row tabbable tabs-left">
+							
+							<ul class="nav nav-tabs col-md-3 col-sm-4">
+								<li ng-repeat="s in summoners" ng-class="{active:$index==0 && !selected}">
+									<a ng-href="#{{s.summoner.id}}" data-toggle="tab" ng-click="selected = true" style="min-height:80px;">
+										<i class='material-icons shrunk-material-icons click' ng-click="deleteSummoner(s.summoner.id)" title="Delete">clear</i>{{s.summoner.name}}
+										<span class="pull-right" style="min-width:100px;">
+											
+											<div class="champion_border" style="display:inline-block" title="{{championImageData.data[composition[s.summoner.id].champion].name}}"  ng-click="openModalChampion($event, s.summoner.id, composition[s.summoner.id].champion)">
+												<div class="suggested_champion" style="background: transparent url('http://ddragon.leagueoflegends.com/cdn/{{ championImageData.version }}/img/champion/{{ championImageData.data[composition[s.summoner.id].champion].image.full }}') no-repeat scroll;width: 48px;height: 48px;display: inline-block;background-size: 120% 120%;background-position:center">
+												</div>
+												<div class="champion_locked" ng-if="isLockedChampion(composition[s.summoner.id].champion)"></div>
+											</div>
+											
+											<div ng-class="{'icon_top':composition[s.summoner.id].position=='top',
+											'icon_jungle':composition[s.summoner.id].position=='jungle',
+											'icon_mid':composition[s.summoner.id].position=='mid',
+											'icon_support':composition[s.summoner.id].position=='support',
+											'icon_bot':composition[s.summoner.id].position=='bot',
+											'icon_position_unknown':!composition[s.summoner.id]}"
+											ng-attr-title="{'Top':composition[s.summoner.id].position=='top',
+											'Jungle':composition[s.summoner.id].position=='jungle',
+											'Mid':composition[s.summoner.id].position=='mid',
+											'Support':composition[s.summoner.id].position=='support',
+											'Bot':composition[s.summoner.id].position=='bot',
+											'No suggestion':!composition[s.summoner.id]}"
+											data-toggle="modal" data-target="#myModal"
+											class="click" ng-click="openModalPosition($event,s.summoner.id)">
+												<div class="position_locked" ng-if="isLockedPosition(composition[s.summoner.id].position)" ng-click="unlockPosition(composition[s.summoner.id].position)"></div>
+											</div>
+										</span>
+									</a>
+								</li>
+							</ul>
+							
+							<div class="col-md-9  col-sm-8 tab-content panel">
+								
+								<div ng-repeat="s in summoners" class="tab-pane" ng-attr-id="{{s.summoner.id}}" ng-class="{active:$index==0 && !selected}">
+									<h4>Position : </h4>
+									<div class="row">
+										<div class="col-md-1">
+											<div class="icon_top click" ng-click="togglePosition(s.summoner.id,'top')"><div class="position-block" ng-show="isBannedPosition(s.summoner.id,'top')"></div></div>
+										</div>
+										<div class="col-md-1">
+											<div class="icon_jungle click" ng-click="togglePosition(s.summoner.id,'jungle')"><div class="position-block" ng-show="isBannedPosition(s.summoner.id,'jungle')"></div></div>
+										</div>
+										<div class="col-md-1">
+											<div class="icon_mid click" ng-click="togglePosition(s.summoner.id,'mid')"><div class="position-block" ng-show="isBannedPosition(s.summoner.id,'mid')"></div></div>
+										</div>
+										<div class="col-md-1">
+											<div class="icon_support click" ng-click="togglePosition(s.summoner.id,'support')"><div class="position-block" ng-show="isBannedPosition(s.summoner.id,'support')"></div></div>
+										</div>
+										<div class="col-md-1">
+											<div class="icon_bot click" ng-click="togglePosition(s.summoner.id,'bot')"><div class="position-block" ng-show="isBannedPosition(s.summoner.id,'bot')"></div></div>
+										</div>
+									</div>
+									
+									<hr />
+									<br />
+									<h4>Champions : </h4>
+									<div class="row">
+										<div ng-repeat="c in s.champion | chestFilter:chestOptimized" class="col-md-2" style="min-width:210px;">
+											<div class="clearfix" ng-if="$index % 6 == 0"></div>
+											<div class="col-md-4 click" ng-click="toggleChampion(s.summoner.id,c.championId)" title="{{championImageData.data[c.championId].name}}">
+												<div style="background: transparent url('http://ddragon.leagueoflegends.com/cdn/{{ championImageData.version }}/img/sprite/{{ championImageData.data[c.championId].image.sprite }}') no-repeat scroll -{{ championImageData.data[c.championId].image.x }}px -{{ championImageData.data[c.championId].image.y }}px;width: 48px;height: 48px;display: inline-block;">
+													<div ng-class="{'chest-border':c.chestGranted,'no-chest-border':c.chestGranted==false}">
+														<div ng-class="{'block':isBannedChampion(s.summoner.id,c.championId)}"></div>
+													</div>
+													
+												</div>
+											</div>
+											<div class="col-md-8" style="padding:8px;">
+												Points : {{ c.championPoints | formatMasteryPoints}}<br />
+												Grade : {{ c.highestGrade}}
+											</div>
+										</div>
+									</div>
+									
+								</div>
+								
+								
+							</div>
+							
+						</div>
+							
+					</div>
+					
+				</div>
+				
+				
+			</div>
+			
+		</div>
+		
+		<!-- JQuery Framework -->
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		
+		<!-- Bootstrap Framework -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		
+		<!-- Socket.io script -->
+		<script src="/socket.io/socket.io.js"></script>
+		
+		<!-- Angular Framework -->
+	   	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		
+	    <!-- Modules -->
+	    <script src="http://canisback.com/fma/views/js/app.js"></script>
+
+	    <!-- Controllers -->
+	    <script src="http://canisback.com/fma/views/js/controllers/FMAController.js"></script>
+		
+		<!-- Google Analytics script -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-49985794-10', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+
+    </body>
+
+</html>
