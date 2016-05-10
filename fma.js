@@ -1,4 +1,4 @@
-var API_KEY = 'ceb9f3a7-f693-44bb-ada1-b09fbfc9fb98';
+var API_KEY = '';
 
 var fs = require('fs');
 
