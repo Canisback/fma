@@ -25,6 +25,8 @@ The users may be able to use different filters to modify the suggestions to what
  - Lock champion/position : select a specific champion/position ignoring suggestion and adapting other users suggestions.
  
 [Live demo](http://canisback.com:3000)
+
+Get in a room, share the URL to your mates and begin to create your best team composition!
  
  
 ## How to use
