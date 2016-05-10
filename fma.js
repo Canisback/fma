@@ -22,7 +22,19 @@ var idUser=0;
 var roomId;
 var roomData = {};
 
-var cache={};
+var cache={
+	"na":{},
+	"euw":{},
+	"eune":{},
+	"lan":{},
+	"las":{},
+	"ru":{},
+	"oce":{},
+	"tr":{},
+	"br":{},
+	"kr":{},
+	"jp":{},
+};
 
 var championData;
 var championImageData={data:{}};
@@ -118,6 +130,7 @@ io.sockets.on('connection', function (socket) {
 	socket.emit('message', {header : "enterRoom", content :{
 			championImageData:championImageData,
 			championData:championData,
+			server : roomData[socket.room].server,
 			summoners : roomData[socket.room].summoners,
 			suggestedPositions : roomData[socket.room].suggestedPositions,
 			lockedPositions : roomData[socket.room].lockedPositions,
@@ -336,6 +349,54 @@ io.sockets.on('connection', function (socket) {
 				socket.emit('message', {header:"getMessage",content:send});
 				
 				break;
+				
+			
+			/* Change server */
+			case "changeServer":
+				
+				
+				if(roomData[socket.room].server!=message.content){
+				
+					roomData[socket.room].server=message.content;
+					roomData[socket.room].summoners={};
+					roomData[socket.room].suggestedPositions={};
+					roomData[socket.room].lockedPositions={};
+					roomData[socket.room].lockedChampions={};
+					roomData[socket.room].bannedChampions={"global":{}};
+					
+				}
+				
+				socket.broadcast.to(socket.room).emit('message', {header : "enterRoom", content :{
+					championImageData:championImageData,
+					championData:championData,
+					server : roomData[socket.room].server,
+					summoners : roomData[socket.room].summoners,
+					suggestedPositions : roomData[socket.room].suggestedPositions,
+					lockedPositions : roomData[socket.room].lockedPositions,
+					lockedChampions : roomData[socket.room].lockedChampions,
+					usersList : roomData[socket.room].clients,
+					bannedChampions : roomData[socket.room].bannedChampions,
+					userName : socket.idUser,
+					room : socket.room,
+					chestOptimized : roomData[socket.room].chestOptimized,
+				}});
+				
+				socket.emit('message', {header : "enterRoom", content :{
+					championImageData:championImageData,
+					championData:championData,
+					server : roomData[socket.room].server,
+					summoners : roomData[socket.room].summoners,
+					suggestedPositions : roomData[socket.room].suggestedPositions,
+					lockedPositions : roomData[socket.room].lockedPositions,
+					lockedChampions : roomData[socket.room].lockedChampions,
+					usersList : roomData[socket.room].clients,
+					bannedChampions : roomData[socket.room].bannedChampions,
+					userName : socket.idUser,
+					room : socket.room,
+					chestOptimized : roomData[socket.room].chestOptimized,
+				}});
+				
+				break;
 			
 		}
 	});
@@ -371,7 +432,7 @@ function getSummonerInfo(socket, name, server_id){
 	var date = new Date();
 	
 	/* If summoner has never been searched */
-	if(typeof cache[name] == "undefined"){
+	if(typeof cache[server_id][name] == "undefined"){
 		
 		
 		/* Search summoner by name */
@@ -383,7 +444,7 @@ function getSummonerInfo(socket, name, server_id){
 				
 				
 				/* Caching summoner data */
-				cache[name] = {
+				cache[server_id][name] = {
 					summoner_timestamp:date.getTime(),
 					champion_timestamp:0,
 					data:{summoner:summoner}
@@ -396,8 +457,8 @@ function getSummonerInfo(socket, name, server_id){
 					if(!err) {
 					
 						/* Caching champion mastery data */
-						cache[name].champion_timestamp = date.getTime();
-						cache[name].data.champion = champion_mastery;
+						cache[server_id][name].champion_timestamp = date.getTime();
+						cache[server_id][name].data.champion = champion_mastery;
 						
 						/* Sending data to client */
 						sendSummonerInfo(socket,{
@@ -454,7 +515,7 @@ function getSummonerInfo(socket, name, server_id){
 	else{
 	
 		/* If summoner data in cache is outdated */
-		if(date.getTime() - cache[name].summoner_timestamp>3600000){
+		if(date.getTime() - cache[server_id][name].summoner_timestamp>3600000){
 			
 			/* Search summoner by name */
 			LolApi.Summoner.getByName(name, function(err, summoner) {
@@ -465,7 +526,7 @@ function getSummonerInfo(socket, name, server_id){
 					
 					
 					/* Caching summoner data */
-					cache[name] = {
+					cache[server_id][name] = {
 						summoner_timestamp:date.getTime(),
 						champion_timestamp:0,
 						data:{summoner:summoner}
@@ -478,8 +539,8 @@ function getSummonerInfo(socket, name, server_id){
 						if(!err) {
 						
 							/* Caching champion mastery data */
-							cache[name].champion_timestamp = date.getTime();
-							cache[name].champion = champion_mastery;
+							cache[server_id][name].champion_timestamp = date.getTime();
+							cache[server_id][name].champion = champion_mastery;
 							
 							/* Sending data to client */
 							sendSummonerInfo(socket,{
@@ -533,9 +594,9 @@ function getSummonerInfo(socket, name, server_id){
 		}
 		
 		/* If champion mastery data in cache is outdated */
-		else if(date.getTime() - cache[name].champion_timestamp>1200000){
+		else if(date.getTime() - cache[server_id][name].champion_timestamp>1200000){
 		
-			var summoner = cache[name].data.summoner;
+			var summoner = cache[server_id][name].data.summoner;
 			
 			
 			/* Search champion mastery by summoner ID */
@@ -544,8 +605,8 @@ function getSummonerInfo(socket, name, server_id){
 				if(!err) {
 				
 					/* Caching champion mastery data */
-					cache[name].champion_timestamp = date.getTime();
-					cache[name].data.champion = champion_mastery;
+					cache[server_id][name].champion_timestamp = date.getTime();
+					cache[server_id][name].data.champion = champion_mastery;
 					
 					/* Sending data to client */
 					sendSummonerInfo(socket,{
@@ -582,15 +643,15 @@ function getSummonerInfo(socket, name, server_id){
 		/* If cache is up-to-date */
 		else{
 		
-			roomData[socket.room].summoners[cache[name].data.summoner.id] = cache[name].data;
+			roomData[socket.room].summoners[cache[server_id][name].data.summoner.id] = cache[server_id][name].data;
 			
 			/* Initializing ban list for summoner */
-			roomData[socket.room].bannedChampions[cache[name].data.summoner.id]={};
+			roomData[socket.room].bannedChampions[cache[server_id][name].data.summoner.id]={};
 			
 			/* Initializing position ban list for summoner */
-			roomData[socket.room].summoners[cache[name].data.summoner.id].bannedPositions={};
+			roomData[socket.room].summoners[cache[server_id][name].data.summoner.id].bannedPositions={};
 			
-			var data = cache[name].data;
+			var data = cache[server_id][name].data;
 			
 			data.bannedPositions={};
 			

@@ -6,6 +6,7 @@ app.controller('FMAController', ['$scope','$http', 'baseUrl', "$sce", function($
 	$scope.messageAddError = "";
 	
 	$scope.selected = false;
+	$scope.server = "";
 	$scope.championData={};
 	$scope.championImageData={};
 	
@@ -67,6 +68,12 @@ app.controller('FMAController', ['$scope','$http', 'baseUrl', "$sce", function($
 				break;
 				
 				
+			/* Update server */
+			case "changeServer":
+				$scope.server = message.content;
+				break;
+				
+				
 				
 			/* Update data from room */
 			case "enterRoom":
@@ -98,6 +105,9 @@ app.controller('FMAController', ['$scope','$http', 'baseUrl', "$sce", function($
 				
 				/* Update chest optimization */
 				$scope.chestOptimized = message.content.chestOptimized;
+				
+				/* Update chest optimization */
+				$scope.server = message.content.server;
 				
 				
 				/* Update room URL */
@@ -452,6 +462,12 @@ app.controller('FMAController', ['$scope','$http', 'baseUrl', "$sce", function($
 		}
 		
 	};
+	
+	$scope.updateServer = function(server){
+		
+		socket.emit('message', {header:"changeServer",content:server});
+		
+	}
 	
 	
 }]);

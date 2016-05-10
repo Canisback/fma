@@ -89,7 +89,25 @@
 			
 			<nav class="navbar navbar-inverse navbar-fixed-top">
 				<div class="container-fluid">
-					<h2 class="text-center">FullMastery Alchemist</h2>
+					<ul class="nav navbar-nav text-center"><h2>FullMastery Alchemist</h2></ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{server.toUpperCase()}}<span class="caret"> </span></a>
+						  <ul class="dropdown-menu">
+							<li><a href="" ng-click="updateServer('na')">NA</a></li>
+							<li><a href="" ng-click="updateServer('euw')">EUW</a></li>
+							<li><a href="" ng-click="updateServer('eune')">EUNE</a></li>
+							<li><a href="" ng-click="updateServer('tr')">TR</a></li>
+							<li><a href="" ng-click="updateServer('br')">BR</a></li>
+							<li><a href="" ng-click="updateServer('kr')">KR</a></li>
+							<li><a href="" ng-click="updateServer('jp')">JP</a></li>
+							<li><a href="" ng-click="updateServer('oce')">OCE</a></li>
+							<li><a href="" ng-click="updateServer('ru')">RU</a></li>
+							<li><a href="" ng-click="updateServer('lan')">LAN</a></li>
+							<li><a href="" ng-click="updateServer('las')">LAS</a></li>
+						  </ul>
+						</li>
+					  </ul>
 				</div>
 			</nav>
 			
